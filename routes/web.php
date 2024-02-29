@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/user/profile', function () {
+
+}) ->name('profile');
+
+Route::get(
+    '/user/profile',
+    [UserProfileController::class, 'show']
+) ->name ('profile');
+
+$url = route('profile');
+    return redirect() -> route('profile');
